@@ -1,0 +1,20 @@
+{
+    "name": "yourframework/php",
+    "description": "Simple and Clean php framework",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "\"Giceha Junior\"",
+            "email": "gicehajunior76@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": "^7.4",
+        "altorouter/altorouter": "dev-master"
+    },
+    "require-dev": {
+        "vlucas/phpdotenv": "5.3.x-dev"
+    }
+}
