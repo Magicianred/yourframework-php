@@ -5,4 +5,4 @@ Upcoming php Framework by the name, <bold>"Your Framework"</bold>,
 Development.
 
 ## License
-<a href="https://github.com/Gicehajunior/yourframework-php/new/main/LICENSE">MIT</a> license.
+<a href="https://github.com/Gicehajunior/yourframework-php/blob/main/LICENSE">MIT</a> license.
