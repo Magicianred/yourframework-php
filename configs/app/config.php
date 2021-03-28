@@ -40,6 +40,28 @@
  */
 
 
+/*******************
+ *  returns the file needed from the views folder.
+ *  iterates the resources folder and returns the required file.
+ */
+function loadView($file) {
+
+    $AuthFolderPath = array(
+        './resources', 
+        './resources/includes', 
+        './resources/vendor',
+        './resources/views'
+    );
+
+    foreach ($AuthFolderPath as $path) {
+        $loader = new loader($path, '');
+        $filepath = $loader->searchFilePaths($file);
+
+        require $filepath;
+    }
+
+}
+
 
 
 

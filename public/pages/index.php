@@ -1,6 +1,6 @@
 <?php
 
-/*******
+    /*******
  *  ____________________________________________________
  *  _____________________________________________________________
  * 
@@ -39,38 +39,34 @@
  * _________________________________________________________________________________________
  */
 
-/*****************
- *  Set basepath for the application
+
+/*******
+ * return views files path.
+ * If a certain file is required, the function should return the file.
+ * 
  */
-define('BASEPATH', 'public', $case_insensitive = true);
+class loader {
+    public $filename;
+    public $AuthFolderPath;
 
-//  The base path of the views folder.
-// $AuthFolderPath =  "resources";
+    public function __construct($AuthFolderPath, $view) {
+        $this->filename = $view;
+        $this->AuthFolderPath = $AuthFolderPath;
+    }
 
-/**********
- * require the view files requirer class
- * gets the file required in a page.
- */
-require "public/pages/index.php";
+    public function searchFilePaths($filename) {
+        
+        $filesTypes =  "".$filename.".php";
+        $filepaths = glob($this->AuthFolderPath.DIRECTORY_SEPARATOR.$filesTypes);
 
-/**************
- * require app config
- */
-require_once "configs/app/config.php";
+        foreach($filepaths as $filepath) {
+            if(!empty($filepath)) {
+                return $filepath;
+            }
+        }
+    }
 
-
-/*********
- *  require vendor_autoload
- *  that is, if we rquire the autoloading of packages.
- */
-require_once "vendor/autoload.php";
-
-
-/************
- * require the router.
- */
-require_once "routes/web.php";
-
+}
 
 
 
